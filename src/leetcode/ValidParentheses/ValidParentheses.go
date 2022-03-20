@@ -4,6 +4,8 @@ Author: Thada Wangthammang
 */
 package ValidParentheses
 
+// "github.com/emirpasic/gods/stacks/arraystack"
+
 func isValid(s string) bool {
-	return true
+	return false
 }

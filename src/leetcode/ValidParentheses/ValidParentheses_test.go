@@ -16,13 +16,13 @@ var tests = []struct {
 	input    string
 	expected bool
 }{
-	{"Simple {}", "{}", true},
+	{"A Pair of {}", "{}", true},
 }
 
 func TestTwoSum(t *testing.T) {
 	for _, test := range tests {
 		t.Run(test.name, func(subtest *testing.T) {
-			subtest.Parallel()
+			// subtest.Parallel()
 			actual := isValid(test.input)
 			assert.Equal(subtest, actual, test.expected)
 		})
