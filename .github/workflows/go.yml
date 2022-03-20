@@ -18,8 +18,8 @@ jobs:
 
     strategy:
       matrix:
-        operating-system: [ubuntu-latest, macOS-latest, windows-latest]
-        go: ['1.18', '1.17', '1.16', '1.15']
+        operating-system: [ubuntu-latest]
+        go: ['1.18']
     name: Go ${{ matrix.go }} Build on ${{ matrix.operating-system }}
 
     steps:
