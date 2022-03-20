@@ -11,9 +11,11 @@ func isValid(s string) bool {
 	for _, ch := range s {
 		if ch == '{' || ch == '(' {
 			stack.Push(ch)
-		} else if ch == '}' {
+		} else if ch == '}' || ch == ')' {
 			peekValue, _ := stack.Peek()
 			if peekValue == '{' {
+				stack.Pop()
+			} else if peekValue == '(' {
 				stack.Pop()
 			}
 		}
