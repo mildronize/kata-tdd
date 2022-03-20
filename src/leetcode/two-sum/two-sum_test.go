@@ -9,12 +9,12 @@ import (
 )
 
 var tests = []struct {
-	title    string
+	name     string
 	nums     []int
 	target   int
 	expected []int
 }{
-	{"simple", []int{2, 7, 11, 15}, 9, []int{0, 1}},
+	{"2+7=9", []int{2, 7, 11, 15}, 9, []int{0, 1}},
 }
 
 // func TestTwoSum(t *testing.T) {
@@ -25,11 +25,11 @@ var tests = []struct {
 // }
 
 func TestTwoSum(t *testing.T) {
-	for _, tt := range tests {
-		t.Run(tt.title, func(subtest *testing.T) {
+	for _, test := range tests {
+		t.Run(test.name, func(subtest *testing.T) {
 			subtest.Parallel()
-			actual := twoSum(tt.nums, tt.target)
-			assert.ElementsMatch(subtest, actual, tt.expected)
+			actual := twoSum(test.nums, test.target)
+			assert.ElementsMatch(subtest, actual, test.expected)
 		})
 	}
 }
