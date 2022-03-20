@@ -1,7 +1,11 @@
 /*
 Problem: https://leetcode.com/problems/valid-parentheses/
 Author: Thada Wangthammang
+Speed: O(n)
 */
+
+// Parenthesis = Bracket
+
 package ValidParentheses
 
 import "github.com/emirpasic/gods/stacks/arraystack"
@@ -9,15 +13,15 @@ import "github.com/emirpasic/gods/stacks/arraystack"
 func isValid(s string) bool {
 	stack := arraystack.New()
 	for _, ch := range s {
-		if ch == '{' || ch == '(' || ch == '[' {
+		if isOpenParenthesis(ch) {
 			stack.Push(ch)
-		} else if ch == '}' || ch == ')' || ch == ']' {
-			peekValue, _ := stack.Peek()
-			if peekValue == '{' && ch == '}' {
+		} else if isCloseParenthesis(ch) {
+			recentValue, _ := stack.Peek()
+			if recentValue == '{' && ch == '}' {
 				stack.Pop()
-			} else if peekValue == '(' && ch == ')' {
+			} else if recentValue == '(' && ch == ')' {
 				stack.Pop()
-			} else if peekValue == '[' && ch == ']' {
+			} else if recentValue == '[' && ch == ']' {
 				stack.Pop()
 			} else {
 				return false
@@ -25,4 +29,12 @@ func isValid(s string) bool {
 		}
 	}
 	return stack.Size() == 0
+}
+
+func isOpenParenthesis(ch rune) bool {
+	return ch == '{' || ch == '(' || ch == '['
+}
+
+func isCloseParenthesis(ch rune) bool {
+	return ch == '}' || ch == ')' || ch == ']'
 }
