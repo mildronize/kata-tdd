@@ -26,6 +26,7 @@ var tests = []struct {
 	{"Not pair (}", "(}", false},
 
 	{"Single [", "[", false},
+	{"A pair of []", "[]", true},
 }
 
 func TestTwoSum(t *testing.T) {
