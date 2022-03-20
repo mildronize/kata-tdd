@@ -1,7 +1,8 @@
-# kata-workshop-golang-starter
+# Kata for practicing TDD with Go Lang
 Kata Workshop Starter for Go Lang
 
-[![GO CI](https://github.com/dotnetthailand/kata-workshop-golang-starter/actions/workflows/go.yml/badge.svg)](https://github.com/dotnetthailand/kata-workshop-golang-starter/actions/workflows/go.yml)
+[![GO CI](https://github.com/mildronize/kata-tdd-golang/actions/workflows/go.yml/badge.svg)](https://github.com/mildronize/kata-tdd-golang/actions/workflows/go.yml)
+
 ## Workshop Home & Other Langauges Templates
 - <https://github.com/dotnetthailand/kata-workshop>
 
