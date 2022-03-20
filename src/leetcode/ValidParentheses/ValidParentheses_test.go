@@ -17,6 +17,7 @@ var tests = []struct {
 	expected bool
 }{
 	{"A Pair of {}", "{}", true},
+	{"Single {", "{", false},
 }
 
 func TestTwoSum(t *testing.T) {
