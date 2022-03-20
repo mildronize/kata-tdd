@@ -7,5 +7,5 @@ package ValidParentheses
 // "github.com/emirpasic/gods/stacks/arraystack"
 
 func isValid(s string) bool {
-	return false
+	return true
 }
