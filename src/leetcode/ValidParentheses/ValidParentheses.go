@@ -4,8 +4,19 @@ Author: Thada Wangthammang
 */
 package ValidParentheses
 
-// import "github.com/emirpasic/gods/stacks/arraystack"
+import "github.com/emirpasic/gods/stacks/arraystack"
 
 func isValid(s string) bool {
-	return len(s)%2 == 0
+	stack := arraystack.New()
+	for _, ch := range s {
+		if ch == '{' {
+			stack.Push(ch)
+		} else if ch == '}' {
+			peekValue, _ := stack.Peek()
+			if peekValue == '{' {
+				stack.Pop()
+			}
+		}
+	}
+	return stack.Size() == 0
 }
