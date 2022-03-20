@@ -17,18 +17,21 @@ var tests = []struct {
 	expected bool
 }{
 	{"A Pair of {}", "{}", true},
-	{"Single {", "{", false},
+	{"Single {", "{", false}, // Test at edge
 
-	{"Single (", "(", false},
+	{"Single (", "(", false}, // Test at edge
 	{"A Pair of ()", "()", true},
 
 	{"Not pair {)", "{)", false},
 	{"Not pair (}", "(}", false},
 
-	{"Single [", "[", false},
+	{"Single [", "[", false}, // Test at edge
 	{"A pair of []", "[]", true},
 
 	{"Not pair [}", "[}", false},
+
+	// Start with close bracket
+	{"Start with close bracket", "}", false},
 }
 
 func TestTwoSum(t *testing.T) {
