@@ -9,7 +9,7 @@ import "github.com/emirpasic/gods/stacks/arraystack"
 func isValid(s string) bool {
 	stack := arraystack.New()
 	for _, ch := range s {
-		if ch == '{' || ch == '(' {
+		if ch == '{' || ch == '(' || ch == '[' {
 			stack.Push(ch)
 		} else if ch == '}' || ch == ')' {
 			peekValue, _ := stack.Peek()
