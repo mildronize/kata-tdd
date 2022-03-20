@@ -1,0 +1,43 @@
+name: GO CI
+
+on:
+  push:
+    paths:
+      - 'src/**'
+  pull_request:
+    paths:
+      - 'src/**'
+
+  # schedule:
+  #   # weekly build every FRI
+  #   - cron: "0 6 * * 5"
+
+jobs:
+  matrix_build:
+    runs-on: ${{ matrix.operating-system }}
+
+    strategy:
+      matrix:
+        operating-system: [ubuntu-latest, macOS-latest, windows-latest]
+        go: ['1.18', '1.17', '1.16', '1.15']
+    name: Go ${{ matrix.go }} Build on ${{ matrix.operating-system }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup go
+        uses: actions/setup-go@v2.2.0
+        with:
+          go-version: ${{ matrix.go }}
+
+      - name: cache go
+        uses: actions/cache@v2
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+      - name: run with testify
+        run: |
+          go mod tidy
+          go test -v ./...
