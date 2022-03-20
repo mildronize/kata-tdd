@@ -20,6 +20,7 @@ var tests = []struct {
 	{"Single {", "{", false},
 
 	{"Single (", "(", false},
+	{"A Pair of ()", "()", true},
 }
 
 func TestTwoSum(t *testing.T) {
