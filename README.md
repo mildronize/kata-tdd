@@ -20,7 +20,13 @@ go test -v
 ## Test all test cases
 
 ```
-go test ./...
+go test -v ./...
+```
+
+## Using Go Test for Colorful Terminal
+
+```
+gotest -v ./...
 ```
 
 ## Reading
