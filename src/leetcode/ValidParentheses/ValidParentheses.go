@@ -19,6 +19,8 @@ func isValid(s string) bool {
 				stack.Pop()
 			} else if peekValue == '[' && ch == ']' {
 				stack.Pop()
+			} else {
+				return false
 			}
 		}
 	}
