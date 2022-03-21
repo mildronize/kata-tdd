@@ -29,7 +29,7 @@ var tests = []struct {
 func TestTwoSum(t *testing.T) {
 	for _, test := range tests {
 		t.Run(test.name, func(subtest *testing.T) {
-			subtest.Parallel()
+			// subtest.Parallel()
 			actual := twoSum(test.nums, test.target)
 			assert.ElementsMatch(subtest, test.expected, actual)
 		})
