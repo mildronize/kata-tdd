@@ -1,7 +1,8 @@
 /*
 Problem: https://leetcode.com/problems/
 Author: Thada Wangthammang
-Speed:
+Speed: O()
+Difficulty:
 */
 
 package _Template

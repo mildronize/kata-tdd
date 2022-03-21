@@ -1,7 +1,8 @@
 /*
-Problem: https://leetcode.com/problems/
+Problem: https://leetcode.com/problems/length-of-last-word/
 Author: Thada Wangthammang
-Speed:
+Speed: O(1)
+Difficulty: Easy
 */
 
 package LengthOfLastWord

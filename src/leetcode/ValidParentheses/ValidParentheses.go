@@ -2,6 +2,7 @@
 Problem: https://leetcode.com/problems/valid-parentheses/
 Author: Thada Wangthammang
 Speed: O(n)
+Difficulty: Easy
 */
 
 // Parenthesis = Bracket

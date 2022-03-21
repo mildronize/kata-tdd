@@ -1,6 +1,8 @@
 /*
 Problem: https://leetcode.com/problems/two-sum
 Author: Thada Wangthammang
+Speed: O(n^2)
+Difficulty: Easy
 */
 
 package two_sum
