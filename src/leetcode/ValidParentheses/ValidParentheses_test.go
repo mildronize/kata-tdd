@@ -53,7 +53,7 @@ func TestTwoSum(t *testing.T) {
 		t.Run(test.name, func(subtest *testing.T) {
 			subtest.Parallel()
 			actual := isValid(test.input)
-			assert.Equal(subtest, actual, test.expected)
+			assert.Equal(subtest, test.expected, actual)
 		})
 	}
 }

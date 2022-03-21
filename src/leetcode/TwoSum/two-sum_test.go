@@ -31,7 +31,7 @@ func TestTwoSum(t *testing.T) {
 		t.Run(test.name, func(subtest *testing.T) {
 			subtest.Parallel()
 			actual := twoSum(test.nums, test.target)
-			assert.ElementsMatch(subtest, actual, test.expected)
+			assert.ElementsMatch(subtest, test.expected, actual)
 		})
 	}
 }
