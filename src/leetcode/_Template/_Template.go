@@ -6,6 +6,6 @@ Speed:
 
 package _Template
 
-func isValid(s string) bool {
+func _Template(s string) bool {
 	return true
 }

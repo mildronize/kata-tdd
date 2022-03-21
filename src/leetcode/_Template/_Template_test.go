@@ -17,8 +17,8 @@ var tests = []struct {
 func Test_Template(t *testing.T) {
 	for _, test := range tests {
 		t.Run(test.name, func(subtest *testing.T) {
-			// subtest.Parallel()
-			actual := isValid(test.input)
+			subtest.Parallel()
+			actual := _Template(test.input)
 			assert.Equal(subtest, actual, test.expected)
 		})
 	}
